@@ -224,6 +224,7 @@ Before timer... waiting for  R2/PT1S
 After Timer
 After Timer
 ```
+
 ## Use Kogito Job Service as external timer service
 
 There is additional configuration needed in the `application.properties` file.
@@ -283,6 +284,8 @@ After that you can redo the timer queries described above.
 
 This sample can be ran just on OpenShift 4 instance as it requires communication with Job service.
 Use [Kogito operator](https://github.com/kiegroup/kogito-cloud-operator/blob/master/README.md) to deploy this example and instantiate also Jobs service. Kogito operator will take care of configuring the example deployment to successfully connect to the Jobs service.
+
+In the [`operator`](operator) directory you'll find the custom resources needed to deploy this example on OpenShift with the Kogito Operator.
 
 ### Test your application
 
