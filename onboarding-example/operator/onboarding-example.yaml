@@ -1,9 +1,15 @@
 apiVersion: app.kiegroup.org/v1alpha1
 kind: KogitoApp
 metadata:
-  name: onboarding-service
+  name: onboarding
 spec:
+  # uncomment to enable persistence
+  #enablePersistence: true
   build:
+    # uncomment to enable persistence
+    #envs:
+    #  - name: MAVEN_ARGS_APPEND
+    #    value: "-Ppersistence"
     gitSource:
       uri: https://github.com/kiegroup/kogito-examples
       contextDir: onboarding-example/onboarding
@@ -20,7 +26,7 @@ spec:
 apiVersion: app.kiegroup.org/v1alpha1
 kind: KogitoApp
 metadata:
-  name: hr-service
+  name: hr
 spec:
   build:
     gitSource:
@@ -30,15 +36,15 @@ spec:
     #mavenMirrorURL: 
   service:
     labels:
-      department: process
+      department/first: process
       id: process
-      employeeValidation: process
+      employee-validation/first: process
 
 ---
 apiVersion: app.kiegroup.org/v1alpha1
 kind: KogitoApp
 metadata:
-  name: payroll-service
+  name: payroll
 spec:
   build:
     gitSource:
